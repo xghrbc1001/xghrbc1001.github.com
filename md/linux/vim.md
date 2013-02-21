@@ -22,3 +22,31 @@
 * :%s/four/4/g  %表整文 g表行
 * 按!号可输入linux命令
 * 另存为 :w 文件名
+* 全选 ggVG 
+
+    gg 让光标移到首行，在vim才有效，vi中无效 
+    V   是进入Visual(可视）模式 
+    G  光标移到最后一行   
+
+## vim中文乱码问题
+```Bash
+$vim ~/.vimrc
+
+let &termencoding=&encoding
+set fileencodings=utf-8,gbk
+
+$:wq
+```
+
+## NERDTree
+### 快捷键
+* ctrl + w + 方向键 ： 切换窗口
+* o 在已有窗口中打开文件、目录或书签，并跳到该窗口 
+* O 递归打开
+* x 合拢目录
+* X 合拢递归
+* C 将选中目录或选中文件的父目录设为根结点
+* r 刷新
+* R 递归刷新
+* ! 执行当前文件
+* m 结点编辑
