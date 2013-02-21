@@ -44,10 +44,10 @@
 ## 访问底层连接，不经过连接池（危险）		
 * accessToUnderlyingConnectionAllowed	false	"是否允许访问底层的JDBC驱动连接（不经过连接池），方法如下：
   
-	Connection conn = ds.getConnection();
-        Connection dconn = ((DelegatingConnection) conn).getInnermostDelegate();
+      Connection conn = ds.getConnection();
+      Connection dconn = ((DelegatingConnection) conn).getInnermostDelegate();
     ...
-        conn.close()
+      conn.close()
 		
 ## 自动关闭连接属性：解决连接泄漏问题（忘记关闭连接）		
 * s	false	当连接达到废弃时间时，是否移除废弃的连接
