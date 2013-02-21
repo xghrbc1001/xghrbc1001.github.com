@@ -10,15 +10,10 @@
 * defaultTransactionIsolation 事务隔离级别,默认值为JDBC驱动默认
 
 > 事务隔离级别
-
-  NONE
-
+> NONE
   READ_COMMITTED
-
   READ_UNCOMMITTED
-
   REPEATABLE_READ
-
   SERIALIZABLE
 
 * defaultCatalog 数据库catalog，数据库名,一般不设置
