@@ -1,3 +1,3 @@
-## Çå³ýtomcat»º´æ
+## clear tomcat's cache
 
-	<Context docBase="D:\test" path="/" **reloadable="true"** >
+	<Context docBase="D:\test" path="/" reloadable="true" >
