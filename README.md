@@ -5,7 +5,9 @@
 
 # code
 
-```ObjectiveC
-代码写在这里
-``` 
+```Java
+public static void main(String [] args) {
+	System.out.println("==========");
+}
+'`` 
 
