@@ -52,11 +52,11 @@
 
  young:存放Java类生成的内存对象
 
-    Eden
+ Eden
 
-    FromSpace
+ FromSpace
 
-    ToSpace
+ ToSpace
 
  多个线程共亨使用一个堆 
 
@@ -88,9 +88,9 @@
 
   方法区也可被垃圾回收,方法区即后文提到的永久代，很多人认为永久代是没有GC的，《Java虚拟机规范》中确实说过可以不要求虚拟机在这区实现GC，而且这区GC的“性价比”一般比较低：在堆中，尤其是在新生代，常规应用进行一次GC可以一般可以回收70%~95%的空间，而永久代的GC效率远小于此。虽然VM Spec不要求，但当前生产中的商业JVM都有实现永久代的GC，主要回收两部分内容：废弃常量与无用类。这两点回收思想与Java堆中的对象回收很类似，都是搜索是否存在引用，常量的相对很简单，与对象类似的判定即可。而类的回收则比较苛刻，需要满足下面3个条件： 
 
-    1.该类所有的实例都已经被GC，也就是JVM中不存在该Class的任何实例。 
-    2.加载该类的ClassLoader已经被GC。 
-    3.该类对应的java.lang.Class 对象没有在任何地方被引用，如不能在任何地方通过反射访问该类的方法。 
+  - 该类所有的实例都已经被GC，也就是JVM中不存在该Class的任何实例。 
+  - 加载该类的ClassLoader已经被GC。 
+  - 该类对应的java.lang.Class 对象没有在任何地方被引用，如不能在任何地方通过反射访问该类的方法。 
 
   是否对类进行回收可使用-XX:+ClassUnloading参数进行控制，还可以使用-verbose:class或者-XX:+TraceClassLoading、-XX:+TraceClassUnLoading查看类加载、卸载信息。 
  
@@ -226,7 +226,7 @@ Java原先是把源代码编译为字节码在虚拟机执行，这样执行速度较慢。而该技术将常用的部
   jvm内存不足时会被回收	
 
   使用方法：	
-'''Java
+```Java
     Object object=new Object();
 
     SoftReference<Object> softRef=new SoftReference<Object>(object);
@@ -234,18 +234,19 @@ Java原先是把源代码编译为字节码在虚拟机执行，这样执行速度较慢。而该技术将常用的部
     object=null;
 
     // 可通过softRef.get来获取，但注意可能会得到null
-'''
+```
 		
 * 弱引用（WeakReference）		
 
   没有强引用后，GC会被立即释放	
   使用方法：	
-'''Java``
+```Java``
+
 	Object object=new Object();
 	WeakReference<Object> weakRef=new WeakReference<Object>object;
 	object=null;
 	//	可传入ReferenceQueue对象到WeakReference构造器中，当object对象被回收时，执行weakRef.isEnqueued会返回true
-'''	
+```
 		
 * 虚引用(PhantomReference)		
 
