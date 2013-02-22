@@ -1,4 +1,4 @@
-## 得到所有请求参数，cookie的jsp
+## get request cookie's jsp
 ```Java
 ige language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
