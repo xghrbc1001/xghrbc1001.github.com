@@ -35,7 +35,7 @@
     -vertify  减少类的载入
 
     帧在debug时的显示图
-    ![线程帧](../imgs/2.png)
+![线程帧](../imgs/2.png)
 
 #### Java堆(Heap)
 
