@@ -4,3 +4,6 @@
   ```Java
   zip struts-blank-1.3.10.war -d struts-blank
   ```
+## Java内存
+
+![内存结构图](../imgs/1.png)
