@@ -1,4 +1,4 @@
-## mysql ±¸·Ý
+## mysql backup 
 ```Bash
 #!/bin/bash
  
