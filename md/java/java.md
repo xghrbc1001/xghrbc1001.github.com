@@ -256,3 +256,16 @@ Java原先是把源代码编译为字节码在虚拟机执行，这样执行速度较慢。而该技术将常用的部
 
   eg: A a=new A();  只有主动释放了引用才会被GC	
 
+
+## Java IO
+* 同步IO	
+- BIO - Blocking IO
+- NIO - Non-Blocking IO
+* 异步IO	
+- AIO
+
+## ClassLoader
+
+### classloader图
+![classloader图](../imgs/5.png)
+
