@@ -14,6 +14,16 @@
 
 使线程进入阻塞状态指定时间，不能得到cpu时间，指定时间一过，即进入可执行状态 
 
+### volatile
+
+为了提高性能，Java 语言规范允许 JRE 在引用变量的每个线程中维护该变量的一个本地副本。您可以将变量的这些 “线程局部” 副本看作是与缓存类似，在每次线程需要访问变量的值时帮助它避免检查主存储器。
+
+eg: 两个线程启动，第一个线程将变量 A 读取为 5，第二个线程将变量 A 读取为 10。如果变量 A 从 5 变为 10，第一个线程将不会知道这个变化，因此会拥有错误的变量 A 的值。但是如果将变量 A 标记为 volatile，那么不管线程何时读取 A 的值，它都会回头查阅 A 的原版拷贝并读取当前值
+
+取易失性变量是同步的，写入易失性变量也是同步的，但非原子操作不同步。
+
+Volatile variables in the Java language can be thought of as "synchronized lite"
+
 ### Future
 
 * cancel(boolean mayInterruptIfRunning)   // 取消该次执行
