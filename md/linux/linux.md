@@ -94,3 +94,18 @@ df -lh 查看磁盘情况
 ### netstat
 * netstat   -anp   |   grep  portno
 
+### ldd
+
+### apt-get
+
+	安装tig
+
+	apt-get install tig
+
+	删除tig
+
+	apt-get purge tig
+
+### dpkg
+
+  debian package
