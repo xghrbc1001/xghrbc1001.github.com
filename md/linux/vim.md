@@ -37,6 +37,15 @@ set fileencodings=utf-8,gbk
 
 $:wq
 ```
+## vim-fold
+* 选中，zf,创建折叠 zf %
+* zo 打开
+* zc 关闭
+* zR 打开所有折叠
+* zM 关闭所有折叠
+* makeview 保存
+* loadview 载入view
+
 
 ## NERDTree
 ### 快捷键
@@ -51,3 +60,6 @@ $:wq
 * ! 执行当前文件
 * m 结点编辑
 * i 分窗口打开
+
+## snipmake
+* 触发词位置  ~/.vim/snippet/java.snippets

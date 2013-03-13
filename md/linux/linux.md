@@ -26,7 +26,15 @@
 * du -sh ./lib  查看文件夹的大小
 
 ### 查找与替换 
-grep "https://cde.com" -rl * | xargs sed -i "s/https:\/\/abc.com/https:\/\/abc.com/g" 查找与替换* 
+* grep "https://cde.com" -rl * | xargs sed -i "s/https:\/\/abc.com/https:\/\/abc.com/g" 查找与替换* 
+* grep ^log happy.txt
+* grep 默认对大小写敏感
+* grep –I log log.txt  忽略大小写
+* grep –w log log.txt 只查找log为单词的
+* grep ‘\<log’ log.txt 前边界
+* grep ‘log\>’ log.txt 后边界
+* grep log ‘find .’
+* grep log ‘find . –mmin –3’ 将文件修改时间小于3分钟的查找
 
 ### scp secure copy
 * eg: 复制文件 scp ntfs-3g-2011.1.15.tgz root@10.12.213.95:/root/
