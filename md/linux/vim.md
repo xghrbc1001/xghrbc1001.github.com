@@ -75,6 +75,46 @@ $:wq
 * ! 执行当前文件
 * m 结点编辑
 * i 分窗口打开
+* s 垂直分窗口
+* p 到父节点
+* P 到根节点
 
 ## snipmake
 * 触发词位置  ~/.vim/snippet/java.snippets
+
+## ctags
+### 地址
+
+http://ctags.sourceforge.net
+
+### 命令
+
+```Bash
+# 创建
+
+ctags -R -o ~/.vim/ctags/pythontags /somepythondir/
+
+# 设置ctags路径 
+
+set tags=/home/xxx/xx/tags, xxxx/tags,......
+
+```
+
+## taglist
+
+https://github.com/vim-scripts/taglist.vim
+
+相当于outline,需要ctags支持
+
+## pathogen
+
+https://github.com/tpope/vim-pathogen
+
+插件管理
+
+### 安装
+
+* 在.vim文件夹下建立autoload和bundle目录
+* 从下载地址获取pathogen.vim文件，将其复制到autoload目录下
+* 在.vimrc文件中增加如下代码： call pathogen#infect()
+
