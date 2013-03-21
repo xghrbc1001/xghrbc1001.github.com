@@ -8,14 +8,14 @@ File file;
 RandomAccessFile ref = new RandomAccessFile(file,"rw"); // rw表示打开文件的方式
 while(ref.getFilePointer() < ref.length()) {
 	String name=ref.readUTF();
-	if("javamm".equals(name)) {
+	if("abc".equals(name)) {
 		ref.writeInt(10);
 		break;
 	} else {
 		ref.skipBytes(4); //int为4个字节，平台无关
 	}
 }
-	ref.writeUTF("javamm");
+	ref.writeUTF("abc");
 	ref.writeInt(0);
 	ref.close();
 ```
