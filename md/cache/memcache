@@ -1,0 +1,25 @@
+### 哈希
+#### 非一致性Hash
+
+  当使用HashMap时，key被均匀地映射到数组之上，映射方法就是利用key的hash与数组长度取模(通过&运算)。
+
+  当put的数据超过负载因子loadFactor×2Len时，HashMap会按照2被的容量扩容。新put进来的数据会通过与新数组的长度 取模的方式进行映射。那之前已经映射的数据该怎么办？通过查看HashMap代码的resize方法会发现，每次扩容都会把之前的key重新映射。
+
+  所以对HashMap而言要想获得较好的性能必须要提前估计所放数据集合的大小，以设计合适的初始化容量和负载因子
+
+
+#### 一致性Hash
+
+比如在大型的P2P网络中存在上百万台Server，资源与Server的关系是以Key的形式映射 而成，也就是说是一个大的HashMap，维护着每个Key在哪个Server之上，如果有新的节点加入或退出P2P网络，跟HashMap一样，也会导 致映射关系的变化，显然不可能把所有的Key与Server的映射关系都调整一遍。这就需要一种方法，在哈希项发生变化是，不需要调整所有的节点，而达到 继续维护哈希映射的关系。因此一致性哈希定义为：
+
+"Consistent hashing is a scheme that provides hash table functionality in a way that the addition or removal of one slot does not significantly change the mapping of keys to slots".(http://en.wikipedia.org/wiki/Consistent_hashing)
+
+就是说，”一致性哈希，就是提供一个hashtable,它能在节点加入离开时不会导致映射关系的重大变化“。
+
+每个节点只负责一部分Key，当节点加入、退出时只影响加入退出的节点和其邻居节点或者其他节点只有少量的Key受影响
+
+### memcached当机
+
+* 本地备份缓存，如直接读DB
+
+* 缓存代理服务器
