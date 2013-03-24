@@ -107,3 +107,11 @@ ThreadPoolExecutor threadPool=new ThreadPoolExecutor(10,1000,30,TimeUtil.SECONDS
 ### CAS: compare and swap 比较并交换
 
 CAS 操作包含三个操作数 —— 内存位置（V）、预期原值（A）和新值(B)。 如果内存位置的值与预期原值相匹配，那么处理器会自动将该位置值更新为新值 。否则，处理器不做任何操作。无论哪种情况，它都会在 CAS 指令之前返回该 位置的值。（在 CAS 的一些特殊情况下将仅返回 CAS 是否成功，而不提取当前 值。）CAS 有效地说明了“我认为位置 V 应该包含值 A；如果包含该值，则将 B 放到这个位置；否则，不要更改该位置，只告诉我这个位置现在的值即可
+
+### ThreadLocal
+
+ThreadLocal有一个ThreadLocalMap静态内部类，你可以简单理解为一个MAP，这个‘Map’为每个线程复制一个变量的‘拷贝’存储其中。
+
+当线程调用ThreadLocal.get()方法获取变量时,首先获取当前线程引用
+
+虽然ThreadLocalMap已经使用了weakReference，但是还是建议能够显示的使用remove方法
