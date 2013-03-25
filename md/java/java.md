@@ -64,6 +64,8 @@
 
 #### 方法区(Java VM Method Area)
 
+  方法区也为线程共亨
+
   Perm: 存放java类及其它虚拟机的静态数据	
 
   -XX:PermSize=128M(PermGen初始值)
@@ -113,6 +115,10 @@
 
 ### 栈帧
 
+  空间不足时，报StackOverflowError -Xss
+
+  线程在创建后，都会产生程序计数器(PC: PC registers)和栈(Stack),pc存放了下一条要执行的指令
+
   由三部分组成
   
   局部变量区
@@ -124,6 +130,7 @@
   结构例子：
 
   ![栈帧结构例子](../imgs/3.png)
+  ![栈体系统结构](../imgs/7.png)
 
 ### 编译
 #### JIT: 即时编译（Just-in-time compilation），又称为动态翻译
@@ -271,6 +278,12 @@ Java原先是把源代码编译为字节码在虚拟机执行，这样执行速度较慢。而该技术将常用的部
 
 ## HotSpot JIT
 
+解释执行:效率较低
+
+编译执行
+
+sun jdk 又称hotspot vm ,提供两种模式: client compiler (-client) 轻量级 和server compiler(-server)
+
 HotSpot是较新的Java虚拟机技术，用来代替JIT技术，可以大大提高Java运行的性能。Java原先是把源代码编译为字节码在虚拟机执行，这样执行速度较慢。而该技术将常用的部分代码编译为本地（原生，native）代码，这样显著提高了性能
 
 JIT编译器，英文写作Just-In-Time Compiler，中文意思是即时编译器。
@@ -281,3 +294,102 @@ JIT编译器，英文写作Just-In-Time Compiler，中文意思是即时编译器。
 即时编译器有两种类型，一是字节码翻译，二是动态编译翻译
 
 在运行时JIT会把翻译过的机器码保存起来，已备下次使用，因此从理论上来说，采用该JIT技术可以，可以接近以前纯编译技术
+
+## 溢出例子
+### OutOfMemory
+```Java
+public class HeapOOM{  
+    static class OOMObject{  
+}  
+public static void main(String[] args){  
+    List<OOMObject> list = new ArrayList<OOMObject>();  
+    while(true){  
+    list.add(new OOMObject());  
+}  
+}  
+} 
+
+```
+### StackOverflowError
+```Java
+    public class JavaVMStackOF{  
+        private int stackLength = 1;  
+        public void stackLeak(){  
+            statckLength++;  
+            stackLeak();  
+    }  
+    public static void main(String[] args){  
+        JavaVMStackOF oom = new JavaVMStackOF();  
+    oom.stackLeak();  
+    }  
+    }  
+
+```
+
+### java虚拟机栈内存溢出
+```Java
+public class JavaVMStackOOM{  
+    private void dontStop(){  
+    while(true){  
+}  
+}  
+public void stackLeakByThread{  
+    while(true){  
+        Thread t = new Thread(new Runnable(){  
+    public void run(){  
+    dontStop();  
+}  
+});  
+t.start();  
+}  
+}   
+public static void main(String[] args){  
+    JavaVMStackOOM oom = new JavaVMStackOOM();  
+    oom. stackLeakByThread();.  
+}  
+} 
+```
+
+### 常量池溢出
+```Java
+/**
+*
+* 运行时常量池属于方法区的一部分
+* String的intern()方法用于检查常量池中如果有等于此String对象的字符串存在，则直接返回常量池中的字符串对象，否则，将此String对象所包含的字符串添加到运行时常量池中，并返回此String对象的引用。因此String的intern()方法特别适合演示运行时常量池溢出
+*/
+    public class RuntimeConstantPoolOOM{  
+        public static void main(String[] args){  
+    List<String> list = new ArrayList<String>();  
+            int i = 0;  
+            while(true){  
+            list.add(String.valueOf(i++).intern());  
+    }  
+    }  
+    }  
+
+```
+### 方法区溢出
+```Java
+/**
+* 方法区用于存放Class的相关信息，Java的反射和动态代理可以动态产生Class，另外第三方的CGLIB可以直接操作字节码，也可以动态产生Class，实验通过CGLIB来演示，同样使用-XX:PermSize=10m和-XX:MaxPermSize=10m将永久代最大内存和最小内存设置为10MB大小，并且由于永久代最大内存和最小内存大小相同，因此无法扩展
+*/
+    public class JavaMethodAreaOOM{  
+        public static void main(String[] args){  
+        while(true){  
+        Enhancer enhancer = new Enhancer();  
+        enhancer.setSuperClass(OOMObject.class);  
+        enhancer.setUseCache(false);  
+        enhancer.setCallback(new MethodInterceptor(){  
+        public Object intercept(Object obj, Method method, Object[] args,   
+                          MethodProxy proxy)throws Throwable{  
+        return proxy.invokeSuper(obj, args);  
+    }  
+    });  
+    enhancer.create();  
+    }  
+    }  
+    class OOMObject{  
+    }   
+    }  
+
+```
