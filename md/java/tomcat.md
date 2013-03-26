@@ -31,6 +31,8 @@ catalina包含有很多组件，随catalina一起启动/关闭。例如，当container关闭时，它必须
 * 观察者设计模式
 * 门面设计模式
 * 责任链设计模式
+* Singleton
+* 责任链模式
 
 ## Digester
 
@@ -54,3 +56,17 @@ maxActiveSessions－可处于活动状态的session数。
 
 PersistentManager －提供了更加灵活的管理方式，具有容错能力，可以及时把Session备份到Session Store中，可以控制内存中Session的数量
 
+## 源码
+
+### Bootstrap
+
+如果是start参数，就表明是启动tomcat。会先后执行daemon.setAwait、daemon.load、daemon.start这三个方法。他们最终会分别采用反射的方式去调用之前已经初始化的catalina的对应方法setAwait、load、start。也就是说其实bootstrap就调用了Catalina类的方法，本身是没做什么额外动作的
+
+```Java
+System.nanoTime()
+
+log.info("Server startup in " + ((t2 - t1) / 1000000) + " ms");
+
+Runtime.getRuntime().addShutdownHook(shutdownHook);
+
+```
