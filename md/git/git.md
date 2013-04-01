@@ -5,8 +5,17 @@
 * git log -p #查看版本信息并显示每次修改的diff
 * git commit -a 可设置自动跟踪己被track,没有track的不可跟踪到
 * git log -t 查看修改内容
-* git fetch 取一下origin的最新
-* git pull
+* git fetch 相当于是从远程获取最新版本到本地，不会自动merge
+```Bash
+git fetch origin master:tmp  #获取最新版本到tmp分支
+git diff tmp #比较 
+git merge tmp #合并
+
+git fetch origin master #远程的origin的master主分支下载最新的版本到origin/master分支上
+git log -p master..origin/master #比较本地的master分支和origin/master分支的差别
+git merge origin/master
+```
+* git pull # 相当于是从远程获取最新版本并merge到本地 pull = fetch + merge
 * git rebase origin/master 分支历史看起来像没有经过任何合并一样
 * git branch
 * git branch AAA 切换分支
@@ -21,6 +30,7 @@
 * git diff master test 比较分支的head的不同
 * git reset
 * git show version ＃查看指定版本信息
+* git revert 是撤销某次操作，此次操作之前的commit都会被保留
 * git reset 会将所有stage的文件状态，都变成非stage状态
 # .git/config 
 * vim .git/config
