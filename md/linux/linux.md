@@ -21,6 +21,11 @@
 
 * curl http://www.baidu.com/
 
+### source
+
+source FileName
+作用:在当前bash环境下读取并执行FileName中的命令
+
 ### du
 
 * du -sh ./lib  查看文件夹的大小
@@ -117,3 +122,9 @@ df -lh 查看磁盘情况
 ### dpkg
 
   debian package
+
+### linux环境变量
+
+永久环境变量 /etc/profile，修改后若想立即生效，执行source /etc/profile
+
+临时环境变量 export
