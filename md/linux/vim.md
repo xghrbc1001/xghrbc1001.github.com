@@ -62,7 +62,7 @@ $:wq
 * loadview 载入view
 
 
-## NERDTree
+## NERDTree 必备
 ### 快捷键
 * ctrl + w + 方向键 ： 切换窗口
 * o 在已有窗口中打开文件、目录或书签，并跳到该窗口 
@@ -79,7 +79,7 @@ $:wq
 * p 到父节点
 * P 到根节点
 
-## snipmake
+## snipmake 必备
 * 触发词位置  ~/.vim/snippet/java.snippets
 
 ## ctags
