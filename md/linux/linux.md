@@ -52,6 +52,12 @@ source FileName
 
 ### file
 * file a.txt 查看件类型
+```Bash
+i mine
+[root@localhost ~]# file -i install.log
+install.log: text/plain; charset=utf-8
+
+```
 
 ### lsof
 * lsof file.txt                显示文件被哪些进程打开
