@@ -17,6 +17,10 @@
 ### alias
 * alias zm='cd /home/name/Desktop/'  =号不能带空格，只在当前shell起效，永久生效，修改~/.bashrc文件
 
+### top
+*【P】、强制以 CPU 使用排序
+*【M】、强制以 内存 使用排序
+
 ### curl
 
 * curl http://www.baidu.com/
