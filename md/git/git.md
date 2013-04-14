@@ -56,3 +56,11 @@ git merge origin/master
 
 # 区域
 * working directory <--> staging area <--> repository
+
+# ignore
+```Bash
+如果要忽略的文件已被git管理,需要先移除,命令如下:
+
+e.g.:
+git rm -r --cached  WebRoot/WEB-INF/classes/**/*
+```
