@@ -4,6 +4,10 @@
   ```Java
   zip struts-blank-1.3.10.war -d struts-blank
   ```
+## BTrace
+
+解决OOM问题
+
 ## -javaagent参数
 
 使用-javaagent 参数用户可以在执行main函数前执行一些其他逻辑（类似aop），甚至可以动态的修改替换类中代码
