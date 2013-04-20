@@ -4,6 +4,61 @@
   ```Java
   zip struts-blank-1.3.10.war -d struts-blank
   ```
+## -javaagent参数
+
+使用-javaagent 参数用户可以在执行main函数前执行一些其他逻辑（类似aop），甚至可以动态的修改替换类中代码
+
+```Java
+/**
+* 把如下程序中的6改为7
+* java -javaagent:MyAgent.jar HelloWorld
+*
+**/
+    public class HelloWorld {  
+        public static void main(String arg[]) {  
+            System.out.println("The number six is 6");  
+        }  
+    }  
+
+    import java.lang.instrument.Instrumentation;  
+      
+    public class MySimpleAgent {  
+        public static void premain(String agentArgs,Instrumentation inst) {  
+            inst.addTransformer(new MySimpleTransformer());  
+        }  
+    }  
+    import java.lang.instrument.ClassFileTransformer;  
+    import java.lang.instrument.IllegalClassFormatException;  
+    import java.security.ProtectionDomain;  
+      
+    public class MySimpleTransformer implements ClassFileTransformer {  
+        public byte[] transform(ClassLoader classloader,  
+                                String classname,  
+                                Class redefinedclass,  
+                                ProtectionDomain protectiondomain,  
+                                byte b[]) throws IllegalClassFormatException {  
+            if(!classname.endsWith("HelloWorld"))  
+                return(null);  
+      
+            String line = "";  
+            for(int i=0; i < b.length;i++){          
+                line += Byte.toString(b[i]) + " ";  
+                if(line.length() > 60) {  
+                    System.out.println(line);  
+                    line = "";  
+                }  
+                if(b[i] == (byte)'6')  
+                    b[i] = (byte)'7';  
+            }  
+            System.out.println(line);  
+            System.out.println("The number of bytes in HelloWorld: " + b.length);  
+            return(b);  
+        }  
+    }  
+
+
+```
+
 ## Java内存
 
 ### java内存结构图
