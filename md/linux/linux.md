@@ -96,6 +96,7 @@ sed '/fish/d' my.txt
 
 ### file
 * file a.txt 查看件类型
+
 ```Bash
 i mine
 [root@localhost ~]# file -i install.log
