@@ -201,3 +201,6 @@ df -lh 查看磁盘情况
 * . 表示任何单个字符
 * 表示某个字符出现了0次或多次
 * [ ] 字符集合。 如：[abc]表示匹配a或b或c，还有[a-zA-Z]表示匹配所有的26个字符。如果其中有^表示反，如[^a]表示非a的字符
+
+### 备份bash
+tar -zcvf /export/home/bak/a'date -d today +%Y%m%d'.tar.gz tomcatROOT/
