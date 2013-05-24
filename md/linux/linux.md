@@ -38,6 +38,20 @@ source FileName
 * du -sh ./lib  查看文件夹的大小 s:summary h:human-readable
 * du -s * | sort -n | tail  列出当前目录里最大的10个文件
 
+### iconv
+
+iconv -f gbk -t utf8 shujujiegou.txt > shujujiegou.txt.utf8  
+
+在linux操作系统下，我们有时打开在windows下的txt文件，发现在windows下能正常显示的txt文件出现了中文乱码
+
+### vim 打开文件乱码解决
+
+修改.vimrc文件
+
+添加下面一行代码
+
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
 ### sed (stream editor)
 ```Bash
 # 不会写入a.txt
