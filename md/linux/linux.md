@@ -2,7 +2,7 @@
 ### 常用命令
 * ctrl + l 清屏
 * ctrl + u      清光标以前的内容 
-* ctrl + u      清光标以前的内容 
+* ctrl + w      清除一个单词
 * ctrl + k      清光标以后的内容 
 * ctrl + a      跳到行首 
 * ctrl + e      跳到行尾 
@@ -133,6 +133,10 @@ install.log: text/plain; charset=utf-8
 * ls -l  *.cpp *.c *.h | awk '{sum+=$5} END {print sum}' 计算所有的C文件，CPP文件和H文件的文件大小总和
 * awk 'length>80' file 从file文件中找出长度大于80的行
 
+### 拆分文件
+* split -l 10 # 按行拆分
+* split -b
+
 ### chown 
 chown 只能root使用， eg: chown users:jessie file1.txt
 
@@ -161,6 +165,9 @@ chown 只能root使用， eg: chown users:jessie file1.txt
 ### find
 * find -name "telnet*"  // 查找文件名
 * find . -name "*.xml"| xargs grep -r 9205  在所有的xml中查找
+
+### ubuntu查看操作系统位数
+getconf LONG_BIT
 
 ### ntsysv 
 * ntsysv 图形化服务 chkconfig
