@@ -10,3 +10,4 @@ line down
 # 换到下行
 
 shift + enter
+ctrl + shift + enter

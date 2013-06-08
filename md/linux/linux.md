@@ -5,6 +5,9 @@
 * ctrl + w      清除一个单词
 * ctrl + k      清光标以后的内容 
 * ctrl + a      跳到行首 
+* ctrl + b /f   光标后退前进
+* ctrl + h 退格键
+* ctrl + r history中的搜索
 * ctrl + e      跳到行尾 
 * ctrl + y      粘贴ctrl + u,ctrl + k,ctrl + w删除的内容 
 * u表示文件主人， g 表示文件文件所在组。 o 表示其他人 ;r 表可读，w 表可写，x 表可以运行
@@ -27,6 +30,9 @@
 ### curl
 
 * curl http://www.baidu.com/
+
+### 查看文件行数
+cat file.ext | wc -l
 
 ### source
 
