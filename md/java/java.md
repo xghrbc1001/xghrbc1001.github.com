@@ -4,6 +4,10 @@
   ```Java
   zip struts-blank-1.3.10.war -d struts-blank
   ```
+## gc.log
+   
+   -Xmx512m -Xloggc:${TOMCAT_HOME}/logs/gc.log
+
 ## BTrace
 
 解决OOM问题

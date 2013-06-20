@@ -18,3 +18,6 @@ tab
 shift + tab
 enter
 shift + enter
+
+# 筛选
+alt + d + f + 回车

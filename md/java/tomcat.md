@@ -1,3 +1,7 @@
+## ´òwar°ü
+```Bash
+jar -cvf xxxx.war xxxx
+```
 ## clear tomcat's cache
 
 	<Context docBase="D:\test" path="/" reloadable="true" >

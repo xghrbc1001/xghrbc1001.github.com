@@ -20,6 +20,12 @@
 * echo “ls -l” | at midnight 在某个时间运行某个命令
 * ssh user@server bash < /path/to/local/script.sh 在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上
 
+### ^M
+^M(ctrl + v + m)，非手动输入
+linux中，\n表回车换行
+windows中，\r\n表回车换行
+可通过命令进行转化，dos2unix,unix2dos
+
 ### alias
 * alias zm='cd /home/name/Desktop/'  =号不能带空格，只在当前shell起效，永久生效，修改~/.bashrc文件
 
@@ -43,6 +49,7 @@ source FileName
 
 * du -sh ./lib  查看文件夹的大小 s:summary h:human-readable
 * du -s * | sort -n | tail  列出当前目录里最大的10个文件
+* du -sh | grep G  grep出G级别的文件
 
 ### iconv
 
@@ -62,6 +69,18 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 ```Bash
 # 不会写入a.txt
 sed "s/my/xgh/g" a.txt
+
+# 删除第一行
+sed -i "1d" a.txt
+
+# 末尾添加
+sed -i "s/$/,/g" a.txt
+
+# 在开头添加
+sed -i "s/^/www./g" a.txt
+
+# 替换换行
+sed -i ":a;N;$!ba;s/\n/w/g" a.txt
 
 # 写入a.txt
 sed -i "s/my/xgh/g" a.txt
@@ -108,6 +127,7 @@ sed '/fish/d' my.txt
 ### scp secure copy
 * eg: 复制文件 scp ntfs-3g-2011.1.15.tgz root@10.12.213.95:/root/
 * eg: 复制目录 scp -r  ntfs-3g-2011.1.15.tgz root@10.12.213.95:/root/
+* scp加端口 scp -P36000
 
 ### grep
 * grep "resourceRestService" ./*.xml
@@ -142,6 +162,29 @@ install.log: text/plain; charset=utf-8
 ### 拆分文件
 * split -l 10 # 按行拆分
 * split -b
+
+### 合并文件
+```Bash
+cat file1 file2 > file3
+
+# 取出两个文件的并集（重复的行只保留一份）
+
+  cat file1 file2 | sort | uniq > file3
+
+# 取出两个文件的交集（只留下同时存在于两个文件中的文件）
+
+  cat file1 file2 | sort | uniq -d > file3
+
+# 删除交集，留下其他的行
+
+  cat file1 file2 | sort | uniq -u > file3
+
+ sort file |uniq
+
+# 重复的行全部去掉
+
+  sort file |uniq -u
+```
 
 ### chown 
 chown 只能root使用， eg: chown users:jessie file1.txt
