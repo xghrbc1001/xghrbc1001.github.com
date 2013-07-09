@@ -2,6 +2,10 @@
 ```Bash
 jar -cvf xxxx.war xxxx
 ```
+## CATALINA_HOME和CATALINA_BASE区别
+
+CATALINA_HOME是Tomcat的安装目 录，CATALINA_BASE是Tomcat的工作目录。如果我们想要运行Tomcat的 多个实例，但是不想安装多个Tomcat软件副本。那么我们可以配置多个工作 目录，每个运行实例独占一个工作目录，但是共享同一个安装目录
+
 ## clear tomcat's cache
 
 	<Context docBase="D:\test" path="/" reloadable="true" >

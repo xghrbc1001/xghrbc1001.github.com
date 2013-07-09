@@ -25,3 +25,6 @@ awk '$4 ~/Technology/' employee.txt  
 
 # {print $2,"\t",$3}
 # {print $2"\t"$3} 中间无空格
+
+# cat brand.txt | awk '/品牌/{print}'  找出含品牌的所有的行
+

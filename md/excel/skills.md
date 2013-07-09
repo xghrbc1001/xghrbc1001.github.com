@@ -21,3 +21,6 @@ shift + enter
 
 # 筛选
 alt + d + f + 回车
+
+# 选择区域
+f5 / ctrl + g  a1:e300
