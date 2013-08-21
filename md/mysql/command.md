@@ -14,7 +14,7 @@ mysqldump YourDatabaseName --user=YourUserName --password=YourPassword
 
 # source
   不带引号
-  source /data/beni/a.sql
+  source /data/beni/a.sql 注意，此时的文件存放位置是本机的文件，而不是服务器上的
 
 # 显示创建表结构语句
   show create table 表名
@@ -31,3 +31,17 @@ load data infile 'D:/20_crt/categoryResult.tar/categoryResult/categoryResult.txt
 
 # 表重命名
   rename table 原表名 to 新表名
+
+  alter table table1 rename to table2
+# fulltext
+
+select * from bk_category where match(category) against ('a1 a2');
+
+# 查看连接数
+  show processlist  
+  show full processlist
+
+# mysql shell 导出数据
+```Bash
+mysql -h my.db.com -u usrname--password=pass db_name -e 'SELECT foo FROM bar' > /tmp/myfile.txt
+```

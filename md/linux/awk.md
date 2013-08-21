@@ -1,5 +1,6 @@
 # 定义分隔符 
-awk -F '|' 
+awk -F '|' ,默认为空格
+echo a b c d | awk '{OFS="|";print $1,$2,$3,$4}' 输出分隔符
 
 # 格式
 Awk ‘[patten]{action}……’
@@ -28,3 +29,9 @@ awk '$4 ~/Technology/' employee.txt  
 
 # cat brand.txt | awk '/品牌/{print}'  找出含品牌的所有的行
 
+# 输出 
+
+输出的结果用制表符(Tab键)隔开的话，可以用
+cat 123.txt | awk '{ print $1 "\t" $3 }'
+输出的结果用空格隔开的话，可以用逗号","隔开
+cat 123.txt | awk '{ print $1 , $3 }'

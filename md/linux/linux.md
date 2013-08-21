@@ -12,8 +12,8 @@
 * ctrl + y      粘贴ctrl + u,ctrl + k,ctrl + w删除的内容 
 * u表示文件主人， g 表示文件文件所在组。 o 表示其他人 ;r 表可读，w 表可写，x 表可以运行
 * whoami:确认自己身份
-* whereis:查询命令所在目录以及帮助文档所在目录 eg: whereis ls
-* which:查询该命令所在目录(类似whereis) eg: which ls
+* whereis:查询命令所在目录以及帮助文档所在目录 eg: whereis ls ,只能用于程序名的搜索，而且只搜索二进制文件
+* which:查询该命令所在目录(类似whereis) eg: which ls which命令的作用是，在PATH变量指定的路径中，搜索某个系统命令的位置
 * id:打印出自己的UID以及GID。(UID:用户身份唯一标识。GID:用户组身份唯一标识。每一个用户只能有一个唯一的UID和 GID)
 * shutdown -h  = halt 停止
 * esc+. 可以把上次命令行的参数给重复出来
@@ -100,6 +100,7 @@ sed '1,3s/my/your/g; 3,$s/This/That/g' my.txt 第一个模式把第一行到第三行的my替换
 a命令就是append， i命令就是insert 
 # 其中的1i表明，其要在第1行前插入一行（insert）
 sed "1 i This is my monkey, my monkey's name is wukong" my.txt
+sed -i '/abc/d;/efg/d' a.txt 删除含字符串abc,efg的行,abc可用正则来代替
 
 # 其中的1a表明，其要在最后一行后追加一行（append）
 sed "$ a This is my monkey, my monkey's name is wukong" my.txt
@@ -123,6 +124,14 @@ sed '/fish/d' my.txt
 * grep ‘log\>’ log.txt 后边界
 * grep log ‘find .’
 * grep log ‘find . –mmin –3’ 将文件修改时间小于3分钟的查找
+* grep -r hello /home 查找home下文件中查找hello
+* grep -i (--ignore-case-senstive)
+* grep -e "正则" 文件名
+* grep -v "被查寻字符串" 文件名  不匹配指定字符串的行
+
+### ls 
+* ls -lt 按时间排序
+* ls -lrt 时间从前往后
 
 ### scp secure copy
 * eg: 复制文件 scp ntfs-3g-2011.1.15.tgz root@10.12.213.95:/root/
@@ -214,6 +223,23 @@ chown 只能root使用， eg: chown users:jessie file1.txt
 ### find
 * find -name "telnet*"  // 查找文件名
 * find . -name "*.xml"| xargs grep -r 9205  在所有的xml中查找
+* find . -name "*c" | xargs grep "strings" 遍历文件夹grep一个字符串
+* find . -type f 
+
+### type
+
+type命令其实不能算查找命令，它是用来区分某个命令到底是由shell自带的，还是由shell外部的独立二进制文件提供的
+
+type cd
+
+### locate
+
+locate 是find -name 的另一种写法，比find -name 快，搜索的是/var/lib/locatedb库，此库每天更新一次，为非实时，可通过updatedb手动更新数据库
+```Bash
+
+locate /etc/sh
+
+```
 
 ### ubuntu查看操作系统位数
 getconf LONG_BIT
@@ -274,3 +300,19 @@ df -lh 查看磁盘情况
 
 ### 备份bash
 tar -zcvf /export/home/bak/a'date -d today +%Y%m%d'.tar.gz tomcatROOT/
+
+### sudoers
+/etc/sudoers
+eg: snswenwen ALL=(root) NOPASSWD:/usr/sbin/iptables
+
+
+### 按行读取文件
+cat file | while read line
+echo $line
+done
+
+### 随机排序
+cat a | sort --random-sort
+
+### host修改后不生效
+/etc/init.d/nscd restart  or /etc/rc.d/init.d/nscd restart
