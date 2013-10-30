@@ -111,7 +111,8 @@ sed "/fish/a This is my monkey, my monkey's name is wukong" my.txt
 # 删除匹配行
 sed '/fish/d' my.txt
 
-
+# 替换为回车
+sed -i "s#xx#\n#g" a.txt
 ```
 
 ### 查找与替换 
@@ -132,6 +133,7 @@ sed '/fish/d' my.txt
 ### ls 
 * ls -lt 按时间排序
 * ls -lrt 时间从前往后
+* -S 按大小排序
 
 ### scp secure copy
 * eg: 复制文件 scp ntfs-3g-2011.1.15.tgz root@10.12.213.95:/root/
@@ -316,3 +318,6 @@ cat a | sort --random-sort
 
 ### host修改后不生效
 /etc/init.d/nscd restart  or /etc/rc.d/init.d/nscd restart
+
+### uptime
+显示系统运行了多长时间
