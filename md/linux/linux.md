@@ -36,7 +36,7 @@ windows中，\r\n表回车换行
 ### curl
 
 * curl http://www.baidu.com/
-
+* 构造post请求 -d 为post请求的数据
 ### 查看文件行数
 cat file.ext | wc -l
 
@@ -50,6 +50,7 @@ source FileName
 * du -sh ./lib  查看文件夹的大小 s:summary h:human-readable
 * du -s * | sort -n | tail  列出当前目录里最大的10个文件
 * du -sh | grep G  grep出G级别的文件
+* grep ".*a\|.*b" a.txt
 
 ### iconv
 
@@ -144,6 +145,10 @@ sed -i "s#xx#\n#g" a.txt
 * grep "resourceRestService" ./*.xml
 * grep -R pcpHttpClientFactory *
 * grep -r "9301" /home/vss_team/*    r  递归查找
+*  grep -F -f ids1.txt  ids2.txt  找出交集
+* grep -Ff file1 file2 统计两个文本文件的相同行
+* grep -vFf file1 file2 统计file1中有，file2中没有的行
+
 
 ### file
 * file a.txt 查看件类型
