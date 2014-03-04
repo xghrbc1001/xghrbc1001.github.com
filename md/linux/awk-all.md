@@ -24,3 +24,6 @@
 * awk ‘{print FILENAME,$0}’ data1.txt data2.txt >data_all.t,把第一个文件和第二个文件合并到data_all.txt中,新文件第一列为原始文件名,后面列为原始文件内容
 * awk 'BEGIN{"date"|getline d;split(d,a);print a[2]}
 * awk 'ARGIND==1 {a[$1]=$0}  ARGIND>1 && ($1 in a) {print a[$1], $2}' a b > c  求件的交集 注意，file注意要dos2unix
+* awk '{if($1 ~ /^[0-9]+$/) print}' text 查找数字
+* 第一列在a文件中，不在b文件第一列中awk ,注意b和a的顺序 'NR==FNR{++a[$1]}a[$1]==0{print $0}' b a
+* awk '{if ($2 != "null" ) {print $2} else{ print $1}}' test

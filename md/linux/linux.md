@@ -37,6 +37,7 @@ windows中，\r\n表回车换行
 
 * curl http://www.baidu.com/
 * 构造post请求 -d 为post请求的数据
+*  curl -d {"id":'100'} baike5.soso.com/z/imageGroupQuery
 ### 查看文件行数
 cat file.ext | wc -l
 
@@ -70,6 +71,9 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 ```Bash
 # 不会写入a.txt
 sed "s/my/xgh/g" a.txt
+
+# y命令，将小写替换为大写
+ sed '1,3y/abcdef/ABCDEF/' datafile
 
 # 删除第一行
 sed -i "1d" a.txt
@@ -200,6 +204,7 @@ cat file1 file2 > file3
 # 重复的行全部去掉
 
   sort file |uniq -u
+  sort -k1,1 只按第一列排序，注意，k1表示按第一列及以后所有的列来排序
 ```
 
 ### chown 
