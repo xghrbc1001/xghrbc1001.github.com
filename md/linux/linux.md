@@ -38,6 +38,8 @@ windows中，\r\n表回车换行
 * curl http://www.baidu.com/
 * 构造post请求 -d 为post请求的数据
 *  curl -d {"id":'100'} baike5.soso.com/z/imageGroupQuery
+* curl -d "f=xml" -d "appname=sstcjx" -d "clientip=172.23.24.41" -d "to=408866256" -d "cc=" -d "bcc=" -d "subject=xxx" -d "content=xxx" -d "texttype=html" -d "sendmethod=1" -d "defaultfrom=1" -d "from=408866256" -b "uin=o0408866256;skey=@GDmDHU5IP" 'http://10.166.138.169:12028/cgi-bin/compose_send' > w.txt  curl cookie,注意cookie不要用两个-b,用一个就可以了
+* curl -x 172.18.33.210:65470 -F file=/tmp/test.txt http://push.wenwen.sogou.com/baike/datarecv/recv.php 
 ### 查看文件行数
 cat file.ext | wc -l
 
@@ -205,6 +207,7 @@ cat file1 file2 > file3
 
   sort file |uniq -u
   sort -k1,1 只按第一列排序，注意，k1表示按第一列及以后所有的列来排序
+  sort -k1,1 -k3,3n 按第一和第三列排序
 ```
 
 ### chown 
