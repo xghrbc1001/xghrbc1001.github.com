@@ -1,0 +1,3 @@
+# memcached可存储List,要求里面的对象实现序列化
+# getAndTouch 会增加超时间
+# List的SubList 会用RandomAccessSubList，返回为非序列化，需注意
