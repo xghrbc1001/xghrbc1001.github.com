@@ -4,3 +4,4 @@
 # mvn package -X
 # 若有打不开zip或jar包的，为jar包下载失败，在repository中删除后重新下载 
 # mvn jetty ,通过mvn jetty:run运行 mvn -Djetty.port=8888 jetty:run 指定端口
+# mvn dependency:sources 下载依赖包源
