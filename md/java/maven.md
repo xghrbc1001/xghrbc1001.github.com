@@ -4,6 +4,10 @@
 # mvn package -X
 # 若有打不开zip或jar包的，为jar包下载失败，在repository中删除后重新下载 
 # mvn jetty ,通过mvn jetty:run运行 mvn -Djetty.port=8888 jetty:run 指定端口
+<<<<<<< HEAD
 # 创建web工程
 
 mvn archetype:generate -DgroupId=com.guilin -DartifactId=luyou -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+=======
+# mvn dependency:sources 下载依赖包源
+>>>>>>> 1862f4b9cea74fc6bb09e981500b59fd5319fd9a
