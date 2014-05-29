@@ -332,5 +332,11 @@ cat a | sort --random-sort
 ### host修改后不生效
 /etc/init.d/nscd restart  or /etc/rc.d/init.d/nscd restart
 
+
 ### uptime
 显示系统运行了多长时间
+
+### 变量
+* /etc/profile 所有用户
+* .bashrc 当前用户
+* env 查看环境变量
