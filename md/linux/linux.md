@@ -136,7 +136,13 @@ sed -i "s#xx#\n#g" a.txt
 * grep -i (--ignore-case-senstive)
 * grep -e "正则" 文件名
 * grep -v "被查寻字符串" 文件名  不匹配指定字符串的行
+* grep 显示前后几行
+```
+grep -A 4 error a.txt  匹配行和它后4行
+grep -B 4 error a.txt  匹配行和它前4行
+grep -C 4 error a.txt  匹配行和它前后各4行
 
+```
 ### ls 
 * ls -lt 按时间排序
 * ls -lrt 时间从前往后
