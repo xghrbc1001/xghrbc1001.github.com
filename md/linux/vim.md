@@ -136,3 +136,10 @@ vim `find -name test`
 在单词时按*号
 
 ### gg（把关标定位到最上面），V（进入VISUAL模式），shift+g（选中整篇文本），然后＝
+
+### vim 乱码
+```
+let &termencoding=&encoding
+set fileencodings=utf-8,gbk
+
+```
