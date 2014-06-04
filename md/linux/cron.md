@@ -3,7 +3,7 @@
 service crond start
 搜索crontab并载入内存来启动,/var/spool/cron 以用户命名的文件
 
-# 一些常用base
+# 一些常用case
 ```
  每隔5秒执行一次：*/5 * * * * ?
 
@@ -23,4 +23,16 @@ service crond start
 
  每天的0点、13点、18点、21点都执行一次：0 0 0,13,18,21 * * ?
 
+
 ```
+
+# crontab -e 编写cron
+# 服务，有时候服务名叫cron
+```
+sbin/service crond start           //启动服务
+/sbin/service crond stop            //关闭服务
+/sbin/service crond restart        //重启服务
+/sbin/service crond reload         //重新载入配置
+
+```
+# /var/spool/cron/
