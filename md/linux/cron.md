@@ -26,7 +26,7 @@ service crond start
 
 ```
 
-# crontab -e 编写cron
+# crontab -e 编写cron,修改后重启 service cron restart,reload不可以
 # 服务，有时候服务名叫cron
 ```
 sbin/service crond start           //启动服务
@@ -36,3 +36,4 @@ sbin/service crond start           //启动服务
 
 ```
 # /var/spool/cron/
+
