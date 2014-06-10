@@ -346,3 +346,6 @@ cat a | sort --random-sort
 * /etc/profile 所有用户
 * .bashrc 当前用户
 * env 查看环境变量
+
+### kill
+* killall nginx

@@ -27,3 +27,4 @@
 * awk '{if($1 ~ /^[0-9]+$/) print}' text 查找数字
 * 第一列在a文件中，不在b文件第一列中awk ,注意b和a的顺序 awk 'NR==FNR{++a[$1]}a[$1]==0{print $0}' b a
 * awk '{if ($2 != "null" ) {print $2} else{ print $1}}' test
+* 模糊匹配 awk '$0~/中国/' test
