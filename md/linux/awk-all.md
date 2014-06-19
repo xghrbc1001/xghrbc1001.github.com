@@ -28,3 +28,9 @@
 * 第一列在a文件中，不在b文件第一列中awk ,注意b和a的顺序 awk 'NR==FNR{++a[$1]}a[$1]==0{print $0}' b a
 * awk '{if ($2 != "null" ) {print $2} else{ print $1}}' test
 * 模糊匹配 awk '$0~/中国/' test
+* group by 求合
+```
+所有第1列相同的行，按第2列的和，求和的结果倒序输出（类似SQL中的group by求sum()）
+        awk '{arr[$1]+=$2}END{for (i in arr) print i,arr[i]}' src.txt  | sort -k2nr -g > dest.txt
+
+```
