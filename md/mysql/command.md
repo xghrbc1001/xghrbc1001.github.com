@@ -22,6 +22,10 @@ mysqldump YourDatabaseName --user=YourUserName --password=YourPassword
 # mysqldump
 
 mysqldump -u name -p pwd dbname table1 table2 > /tmp/a.sql
+```
+mysqldump -h172.23.150.120 -uroot -pzhishisousuo bk auditFailMetaInfo > /tmp/auditFailMetaInfo.sql
+
+```
 
 # load data
 

@@ -11,3 +11,5 @@ upstream tomcat_bkcategory {
     server 127.0.0.2:9011 weight=10
 }
 ```
+# nginx: [error] open() ＂/usr/local/nginx/logs/nginx.pid＂
+killall nginx

@@ -54,6 +54,7 @@ source FileName
 * du -s * | sort -n | tail  列出当前目录里最大的10个文件
 * du -sh | grep G  grep出G级别的文件
 * grep ".*a\|.*b" a.txt
+* ll | grep -v 162  grep不含162的
 
 ### iconv
 
@@ -160,6 +161,7 @@ grep -C 4 error a.txt  匹配行和它前后各4行
 *  grep -F -f ids1.txt  ids2.txt  找出交集
 * grep -Ff file1 file2 统计两个文本文件的相同行
 * grep -vFf file1 file2 统计file1中有，file2中没有的行
+* grep tab  用grep '按CTRL+V 键，再按TAB键'      你的文件
 
 
 ### file
