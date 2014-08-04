@@ -351,3 +351,8 @@ cat a | sort --random-sort
 
 ### kill
 * killall nginx
+
+### ^M
+* DOS (Windows 系统)使用的断行字符为 ^M$ ，我们称为 CR 与 LF 两个符号。 而在 Linux 底下，则是仅有 LF ($) 这个断行符号
+* 可以使用dos2unix来转换 | sed -i 's/^M//g' filename
+
