@@ -456,3 +456,9 @@ public static void main(String[] args){
     }  
 
 ```
+
+### 性能调优
+#### jstack
+```
+jstack pid > stack.log
+```
