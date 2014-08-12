@@ -49,3 +49,10 @@ select * from bk_category where match(category) against ('a1 a2');
 ```Bash
 mysql -h my.db.com -u usrname--password=pass db_name -e 'SELECT foo FROM bar' > /tmp/myfile.txt
 ```
+
+# 视图
+```
+CREATE VIEW `abc` AS
+  SELECT * FROM a1 union  SELECT * FROM a2
+
+```
