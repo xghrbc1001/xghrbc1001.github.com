@@ -56,3 +56,5 @@ CREATE VIEW `abc` AS
   SELECT * FROM a1 union  SELECT * FROM a2
 
 ```
+# max conn
+* show variables like '%conn%'; wenwen max_connections 2000
