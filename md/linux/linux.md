@@ -357,3 +357,13 @@ cat a | sort --random-sort
 * 可以使用dos2unix来转换 | sed -i 's/^M//g' filename
 
 ### ctrl + z  fg
+
+### spawn
+```
+#! /usr/bin/expect
+set timeout 30
+spawn ssh -l username 192.168.0.1 
+expect "password:"
+send "123456"
+interact
+```
