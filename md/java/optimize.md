@@ -12,3 +12,9 @@
 * 技术上有较高的要求
 * 理论上没有瓶颈
 * 硬件故障机率大幅度上升（google经验，10000台机器，每天都要报废一台)
+
+# cpu过高
+* 根据top命令，发现PID为28555的Java进程占用CPU高达200%，出现故障。
+* ps -mp pid -o THREAD,tid,time ,找到cpu过高的tid
+* printf "%x\n" tid
+* jstack pid |grep tid -A 30 打印堆信息,分7代码 
