@@ -462,3 +462,11 @@ public static void main(String[] args){
 ```
 jstack pid > stack.log
 ```
+### linux 环境变量配置
+```
+# /etc/profile 然后logout
+export JAVA_HOME=/usr/share/jdk1.6.0_14 
+export PATH=$JAVA_HOME/bin:$PATH 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+
+```
