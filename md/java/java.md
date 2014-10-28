@@ -470,3 +470,18 @@ export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
 
 ```
+
+# 查看java位数
+```
+# java -version
+java version "1.6.0_26"
+Java(TM) SE Runtime Environment (build 1.6.0_26-b03)
+Java HotSpot(TM) Server VM (build 20.1-b02, mixed mode)
+
+如果是64位的话,最后一行会显示64-Bit
+#java -version
+java version "1.6.0_26"
+Java(TM) SE Runtime Environment (build 1.6.0_26-b03)
+Java HotSpot(TM) 64-Bit Server VM (build 20.1-b02, mixed mode)
+
+```

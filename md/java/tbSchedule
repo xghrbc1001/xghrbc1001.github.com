@@ -1,0 +1,2 @@
+# zookeeper需要创建node先
+# 任务全部完成后，需要创建node : /zk/push/baseTaskType/pushSchedule/pushSchedule/taskItem
