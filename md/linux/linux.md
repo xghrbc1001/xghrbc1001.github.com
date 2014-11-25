@@ -32,6 +32,7 @@ windows中，\r\n表回车换行
 ### top
 *【P】、强制以 CPU 使用排序
 *【M】、强制以 内存 使用排序
+* 1 显示多核cpu
 
 ### curl
 
@@ -367,3 +368,5 @@ expect "password:"
 send "123456"
 interact
 ```
+
+### md5sum a.txt
