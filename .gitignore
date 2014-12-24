@@ -2,6 +2,7 @@
 *.class
 
 # vim 
+*.sw*
 *.swl
 *.swm
 *.swn

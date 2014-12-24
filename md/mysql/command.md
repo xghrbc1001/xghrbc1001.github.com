@@ -42,7 +42,7 @@ load data infile 'D:/20_crt/categoryResult.tar/categoryResult/categoryResult.txt
 select * from bk_category where match(category) against ('a1 a2');
 
 # 查看连接数
-  show processlist  
+  show processlist   列出当前连接的sql
   show full processlist
 
 # mysql shell 导出数据

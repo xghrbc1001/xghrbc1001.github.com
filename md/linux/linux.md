@@ -55,6 +55,8 @@ source FileName
 * du -s * | sort -n | tail  列出当前目录里最大的10个文件
 * du -sh | grep G  grep出G级别的文件
 * grep ".*a\|.*b" a.txt
+* grep 'a\|b' a.txt 或者
+* time grep 'a' a.txt 查看命令运行时间
 * ll | grep -v 162  grep不含162的
 
 ### iconv

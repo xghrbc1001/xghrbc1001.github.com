@@ -34,3 +34,5 @@
         awk '{arr[$1]+=$2}END{for (i in arr) print i,arr[i]}' src.txt  | sort -k2nr -g > dest.txt
 
 ```
+* 打印最后一列 awk '{print $NF}' a
+* 打印倒数第二列 awk '{print $(NF-1)}' a
