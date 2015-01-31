@@ -9,3 +9,6 @@
 mvn archetype:generate -DgroupId=com.guilin -DartifactId=luyou -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
 # mvn dependency:sources ÏÂÔØÒÀÀµ°üÔ´
+
+# project is not a java projetc
+mvn eclipse:eclipse

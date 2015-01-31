@@ -12,3 +12,12 @@
 ## columns
 ## hash
 ## key
+
+# command
+```
+Alter table lemma_category partition by hash(categoryId) partitions 100;
+alert table t drop partition p2
+explain partitions select * from t;
+```
+
+# 分区后建索引，也生效
