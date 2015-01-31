@@ -58,3 +58,6 @@ CREATE VIEW `abc` AS
 ```
 # max conn
 * show variables like '%conn%'; wenwen max_connections 2000
+
+# 导入
+ mysql -uroot -pzhishisousuo -h10.136.114.45  -P3306 bk_lemma --default-character-set=GBK  < tushu.sql
