@@ -17,8 +17,14 @@
 # redis
 * src/redis-cli
 * set key value 添加或修改
+```
+set f "\x40"
+get f 显示"@"
+```
 * get key
 * del key
 * lpush key value1
 * lrange key 0 2
 * llen key
+* keys * 返回所有的key
+* dbsize
