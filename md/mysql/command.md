@@ -24,6 +24,9 @@ mysqldump YourDatabaseName --user=YourUserName --password=YourPassword
 mysqldump -u name -p pwd dbname table1 table2 > /tmp/a.sql
 ```
 mysqldump -h172.23.150.120 -uroot -pzhishisousuo bk auditFailMetaInfo > /tmp/auditFailMetaInfo.sql
+# 只insert语句
+mysqldump -h10.136.114.45 --compact --extended-insert=false -uroot -pzhishisousuo bk_category category0210> /data/beni/category0210.sql
+
 
 ```
 
