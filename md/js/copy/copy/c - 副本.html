@@ -1,0 +1,22 @@
+<html>
+<meta charset="GBK">
+<body>
+<script type="text/javascript" src="http://www.niumowang.org/wp-content/plugins/pizi_run_code/ZeroClipboard.js"></script>
+
+<script>
+
+ZeroClipboard.setMoviePath("http://www.niumowang.org/wp-content/plugins/pizi_run_code/ZeroClipboard.swf"); 
+
+</script>
+
+<div id="clip_button" style="border:1px solid black; padding:20px;width:150px;">
+	点击复制到剪切板
+</div>
+<textarea style="width:300px;height:100px;margin-top:20px;">粘贴到这里</textarea>
+<script language="JavaScript">
+                        var clip = new ZeroClipboard.Client();
+                        clip.setText( '中华人民共和国' );
+                        clip.glue( 'clip_button' );
+                </script>
+</body>
+</html>
