@@ -29,6 +29,12 @@ windows中，\r\n表回车换行
 ### alias
 * alias zm='cd /home/name/Desktop/'  =号不能带空格，只在当前shell起效，永久生效，修改~/.bashrc文件
 
+### fgrep
+* fgrep 相当于grep -F，不匹配正则
+```
+find -name *.java | xargs fgerp --color aaa
+```
+
 ### top
 *【P】、强制以 CPU 使用排序
 *【M】、强制以 内存 使用排序
