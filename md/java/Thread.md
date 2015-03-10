@@ -164,3 +164,18 @@ ConcurrentHashMap 在默认并发级别会创建包含 16 个 Segment 对象的数组。每个 Segmen
 
 ### 何时使用 ReentrantLock
 * 在确实需要一些 synchronized 所没有的特性的时候，比如时间锁等候、可中断锁等候、无块结构锁、多个条件变量或者锁投票
+
+### automic 原子性，保证原子性
+
+* AtomicLong
+```
+private final AtomicLong count=new AtomicLong(0);  // 有final
+count.incrementAndGet(); // 只有一个线程对其进行修改
+public long getCount(){
+	return count.get();
+}
+```
+* AtomicReference
+```
+private final AtomicReference<BigInteger> num=new AtomicReference<BigInteger>();
+```
