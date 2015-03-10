@@ -18,6 +18,15 @@
 Alter table lemma_category partition by hash(categoryId) partitions 100;
 alert table t drop partition p2
 explain partitions select * from t;
+
+CREATE TABLE `user` (
+  `id` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(128) NOT NULL DEFAULT ''
+ 
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8
+ partition by hash(id) partitions 100;
+
 ```
 
 # 分区后建索引，也生效
