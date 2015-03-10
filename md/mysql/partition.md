@@ -30,3 +30,8 @@ CREATE TABLE `user` (
 ```
 
 # 分区后建索引，也生效
+
+# explain
+```
+explain partitions select * from test where a > 10
+```
