@@ -2,4 +2,7 @@
 ```
 ls |xargs rm
 find -name *test* | xargs cat > a
+
+# 找到件复制到目录
+find -name *.jpg | xargs -i cp {} /data/i/
 ```

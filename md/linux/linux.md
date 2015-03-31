@@ -378,3 +378,7 @@ interact
 ```
 
 ### md5sum a.txt
+hexdump -C user.2015-03-25 | grep 'E2 9D A4'
+
+select hex(name) from user where id=1720120224;
+### 
