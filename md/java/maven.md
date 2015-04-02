@@ -12,3 +12,13 @@ mvn archetype:generate -DgroupId=com.guilin -DartifactId=luyou -DarchetypeArtifa
 
 # project is not a java projetc
 mvn eclipse:eclipse
+
+```
+# 从己有的生成
+  mvn archetype:create-from-project
+  cd target\generated-sources\archetype
+  mvn install
+
+# 生成工程
+  mvn archetype:generate -B -DarchetypeCatalog=local -DarchetypeRepository=local -DarchetypeGroupId=com.sogou.baike.user -DarchetypeArtifactId=bk-user-archetype -DarchetypeVersion=1.0.0-SNAPSHOT -DgroupId=com.sogou.baike -DartifactId=dict
+```
