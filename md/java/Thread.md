@@ -1,6 +1,7 @@
 ### 常用方法
 #### yield
 
+yield 检测当前是否有相同优先级，若有，将占有权交给此线程，否则，继续运行原来的线程
 让当前线程回到可执行状态，以便让具有相同优先级的线程进入执行状态，但不是绝对的。因为虚拟机可能会让该线程重新进入执行状态。
 
 使线程放弃当前cpu时间，但是不使线程阻塞，线程仍处于可执行状态 ，随时可能再次分得cpu时间
@@ -179,3 +180,9 @@ public long getCount(){
 ```
 private final AtomicReference<BigInteger> num=new AtomicReference<BigInteger>();
 ```
+
+### dameon
+*  Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon也就没有工作可做了，也就没有继续运行程序的必要了。 
+* thread.setDaemon(true)必须在thread.start()之前设置，否则会跑出一个IllegalThreadStateException异常。你不能把正在运行的常规线程设置为守护线程。  
+* 在Daemon线程中产生的新线程也是Daemon的。  
+* 不要认为所有的应用都可以分配给Daemon来进行服务，比如读写操作或者计算逻辑
