@@ -132,3 +132,21 @@ system,系统依赖，必须通过systemPath显示指定路径
 <systemPath>${java.home}/lib/rt.jar</systemPath>
 
 ```
+
+# 传递性依赖
+* 路径就近原则
+```
+A->B->C->X(1.0)  A->D->X(2.0) X(2.0)会被解7
+```
+* 第一声明优先
+```
+A->B->Y(1.0)  A->C->Y(2.0)  Y(1.0)优先
+```
+
+# 可选依赖
+```
+<dependency>
+	<version>1.0.0</version>
+	<optional>true</optional>
+</dependency>
+```
