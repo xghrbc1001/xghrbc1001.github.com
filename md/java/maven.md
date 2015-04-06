@@ -150,3 +150,19 @@ A->B->Y(1.0)  A->C->Y(2.0)  Y(1.0)优先
 	<optional>true</optional>
 </dependency>
 ```
+
+# setting.xml
+```
+# maven会check包是不是有量多新，如果有，下载到local repo中，若不需要，配置如下
+<offline>true</offline>
+```
+# 己解7依赖
+```
+mvn dependency:list
+mvn dependency:tree
+mvn dependengy:analyze
+```
+# 仓库
+## 本地仓库
+
+## 远程仓库
