@@ -143,3 +143,8 @@ let &termencoding=&encoding
 set fileencodings=utf-8,gbk
 
 ```
+
+### 多行变一行
+```
+选 中，选 后按J
+```
