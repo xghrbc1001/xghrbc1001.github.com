@@ -64,3 +64,12 @@ CREATE VIEW `abc` AS
 
 # 导入
  mysql -uroot -pzhishisousuo -h10.136.114.45  -P3306 bk_lemma --default-character-set=GBK  < tushu.sql
+
+# 批量kill
+```
+show processlist
+select concat('KILL ',id,';') from information_schema.processlist into outfile  '/tmp/a.txt';  
+ 
+source /tmp/a.txt; 
+```
+
