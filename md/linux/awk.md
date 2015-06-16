@@ -35,3 +35,8 @@ awk '$4 ~/Technology/' employee.txt  
 cat 123.txt | awk '{ print $1 "\t" $3 }'
 输出的结果用空格隔开的话，可以用逗号","隔开
 cat 123.txt | awk '{ print $1 , $3 }'
+
+# 求平均值
+```
+awk '{ sum+=$NF} END {print sum/NR}'    time.log
+```
