@@ -73,3 +73,8 @@ select concat('KILL ',id,';') from information_schema.processlist into outfile  
 source /tmp/a.txt; 
 ```
 
+# 修改mysql慢查询
+```
+set global long_query_time=0.3;
+
+```
