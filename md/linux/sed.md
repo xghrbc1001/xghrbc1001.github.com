@@ -6,4 +6,5 @@ sed -n '1,2p' a.txt
 sed -i '1iabc' a.txt 第一行写入
 sed中若带变量，将'改为"
  sed /^$/d wuhui.txt 删除空白行
+ sed -e 's/<[^>]*>//g'  替换所有的html
 ```
